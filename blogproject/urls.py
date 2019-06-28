@@ -19,5 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
-    url(r'',include('comments.urls')),#前面是''加上blog.urls里的字符串 比如 r'fuck/'  blog.urls有 'you'最后就是fuck/you
+    url(r'',include('comments.urls')),
+    url(r'',include('login.urls')),#前面是''加上blog.urls里的字符串 比如 r'fuck/'  blog.urls有 'you'最后就是fuck/you
 ]
