@@ -3,14 +3,9 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
+
 '''django创建一个类（表）会自动创建一个属性id'''
 
-'''class Category(models.Model):
-
-    name = models.CharField(max_length=100)
-    def __str__(self):
-        return self.name
-'''
 
 
 class Tag(models.Model):
@@ -18,11 +13,15 @@ class Tag(models.Model):
     标签 Tag 也比较简单，和 Category 一样。
     再次强调一定要继承 models.Model 类！
     """
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=10)
     def __str__(self):
         return self.name
 
+class Category(models.Model):
 
+    name= models.CharField(max_length=10)
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
     """
@@ -32,7 +31,7 @@ class Post(models.Model):
     body = models.TextField()
     created_time = models.DateTimeField()
     modified_time = models.DateTimeField()
-    category = models.CharField(max_length=100)
+    category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag, blank=True)
     author = models.ForeignKey(User)#user在数据中自行创建
 
@@ -47,3 +46,4 @@ class Post(models.Model):
     def increase_viewed(self):
         self.viewed += 1
         self.save(update_fields=['viewed'])
+

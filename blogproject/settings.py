@@ -25,7 +25,7 @@ SECRET_KEY = '@6p#*4%+l*%bjg-=nzy2n5x_6q&htji#2ay&zfz@!biyiyirij'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.batt1ebear.site']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,8 +81,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'blog',
         'USER': 'root',
-        'PASSWORD': 'richard19991028',
-        'HOST':'127.0.0.1',
+        'PASSWORD': '1234',
+        'HOST':'localhost',
         'PORT':'3306'
     }
 }
@@ -106,6 +106,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'width': 600,
+    'height': 400,
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -126,3 +131,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+IMG_ROOT = "/test_img"

@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load blog_tags %}
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -67,10 +68,12 @@
                     <div class="post-heading">
                         <h1>{{ post.title }}</h1>
                         <span class="meta">Posted by
-              <a href="#">{{post.author}}</a>
+              <a href="#">-{{post.author}}-</a>
+              
               <time class="entry-time" datetime="{{ post.created_time }}">{{ post.created_time }}</time></span>
+              <br><a>{{ post.category }}</a>
                     </div>
-                </div>
+                    
             </div>
         </div>
     </header>

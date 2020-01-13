@@ -71,6 +71,9 @@
         </div>
     </header>
 
+    <div class="sidebar">
+        
+    </div>
     <!-- Main Content -->
     <div class="container">
         <div class="row">
@@ -82,14 +85,15 @@
                             {{ post.title }}
                         </h2>
                         <h5 class="post-subtitle">
-                            {{ post.body|truncatechars:30 }}
+                            {{ post.body|striptags|truncatechars:20 }}
                         </h5>
                     </a>
                     <p class="post-meta">Posted by
                         <a href="#">{{post.author}}</a>
                         <time class="entry-time" datetime="{{ post.created_time }}">{{ post.created_time }}</time></p>
                 </div>
-                <hr> {% empty %}
+                <hr> 
+                {% empty %}
                 <div class="no-post">暂时还没有发布的文章！</div>
                 {% endfor %}
                 <!-- Pager -->
