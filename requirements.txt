@@ -6,7 +6,7 @@ cffi==1.11.5
 chardet==3.0.4
 colorama==0.4.0
 cycler==0.10.0
-Django==1.10.6
+Django==2.2.24
 EasyProcess==0.2.3
 idna==2.7
 isort==4.3.4
